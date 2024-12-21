@@ -12,7 +12,7 @@ struct InputData: CustomStringConvertible {
         challengeData.map { Self(name: "challenge", data: $0) }
     ]}
     static func part2(_ challengeData: String?) -> [Self?] {[
-        .example,
+        .example2,
         challengeData.map { Self(name: "challenge", data: $0) }
     ]}
 
@@ -26,5 +26,13 @@ struct InputData: CustomStringConvertible {
         name: "example",
         data:
 """
+xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))
+""")
+
+    static let example2 = Self(
+        name: "example",
+        data:
+"""
+xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))
 """)
 }
