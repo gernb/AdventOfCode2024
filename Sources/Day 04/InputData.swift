@@ -26,5 +26,15 @@ struct InputData: CustomStringConvertible {
         name: "example",
         data:
 """
+MMMSXXMASM
+MSAMXMSMSA
+AMXSXMAAMM
+MSAMASMSMX
+XMASAMXAMM
+XXAMMXXAMA
+SMSMSASXSS
+SAXAMASAAA
+MAMMMXMMMM
+MXMXAXMASX
 """)
 }
