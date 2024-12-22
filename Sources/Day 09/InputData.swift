@@ -8,6 +8,7 @@
 struct InputData: CustomStringConvertible {
     static let day = 9
     static func part1(_ challengeData: String?) -> [Self?] {[
+//        .example2,
         .example,
         challengeData.map { Self(name: "challenge", data: $0) }
     ]}
@@ -26,5 +27,13 @@ struct InputData: CustomStringConvertible {
         name: "example",
         data:
 """
+2333133121414131402
+""")
+
+    static let example2 = Self(
+        name: "example2",
+        data:
+"""
+12345
 """)
 }
