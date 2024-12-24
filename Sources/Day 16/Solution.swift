@@ -150,23 +150,21 @@ enum Part2 {
             let heading = path.heading
             while true {
                 var next = coord.next(heading.left)
-                if maze[next] != .wall && path.tiles.contains(next) == false && path.score + 1000 <= tileScores[next, default: .max] {
+                if maze[next] != .wall && path.score + 1000 <= tileScores[next, default: .max] {
                     let newPath = path.duplicate()
                     newPath.score += 1000
                     newPath.heading = heading.left
                     queue.append(newPath)
                 }
                 next = coord.next(heading.right)
-                if maze[next] != .wall && path.tiles.contains(next) == false && path.score + 1000 <= tileScores[next, default: .max] {
+                if maze[next] != .wall && path.score + 1000 <= tileScores[next, default: .max] {
                     let newPath = path.duplicate()
                     newPath.score += 1000
                     newPath.heading = heading.right
                     queue.append(newPath)
                 }
                 next = coord.next(path.heading)
-                if maze[next] == .wall || path.tiles.contains(next) {
-                    break
-                }
+                if maze[next] == .wall { break }
                 coord = next
                 tileScores[coord] = path.score
                 path.tiles.append(coord)
